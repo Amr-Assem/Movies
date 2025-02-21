@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/app_assets.dart';
+import 'package:movies_app/home_screen.dart';
 import 'package:movies_app/widgets/onboarding_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnboardingScreen extends StatefulWidget {
   static const String routeName = "OnBoarding";
@@ -99,7 +101,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   curve: Curves.easeIn,
                 ),
                 onFinish: () {
-                  Navigator.of(context).pushNamed('Home');
+                  _onGetStarted();
                 },
               ),
             ],
@@ -107,5 +109,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ],
       ),
     );
+  }
+
+  void _onGetStarted() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('showHome', true);
+    Navigator.of(context).pushReplacementNamed(MainScreen.routeName);
   }
 }

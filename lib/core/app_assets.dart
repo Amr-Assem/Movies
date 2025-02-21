@@ -12,7 +12,11 @@ abstract class AppAssets {
   // App Images
   static const String emptySearch = 'assets/images/empty_search.png';
 
-  // Icons
+  // App Icons
+  static const String home = 'assets/icons/home.svg';
+  static const String search = 'assets/icons/search.svg';
+  static const String browse = 'assets/icons/browse.svg';
+  static const String profile = 'assets/icons/profile.svg';
 
   // Colors
   static const Color primary = Color(0xFFFFBB3B);

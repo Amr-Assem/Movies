@@ -7,16 +7,16 @@ import 'package:video_player/video_player.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: BrowseScreen(),
+    home: BrowseTab(),
   ));
 }
 
-class BrowseScreen extends StatefulWidget {
+class BrowseTab extends StatefulWidget {
   @override
-  _BrowseScreenState createState() => _BrowseScreenState();
+  _BrowseTabState createState() => _BrowseTabState();
 }
 
-class _BrowseScreenState extends State<BrowseScreen> {
+class _BrowseTabState extends State<BrowseTab> {
   List movies = [];
   final List<String> categories = [
     "Action",

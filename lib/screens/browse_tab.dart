@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:movies_app/core/app_assets.dart';
 import 'dart:convert';
 import 'package:video_player/video_player.dart';
+import 'package:movies_app/models/movie.dart';
+import 'package:movies_app/widgets/movie_card.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -17,7 +19,7 @@ class BrowseTab extends StatefulWidget {
 }
 
 class _BrowseTabState extends State<BrowseTab> {
-  List movies = [];
+  List<Movie> movies = [];
   final List<String> categories = [
     "Action",
     "Comedy",
@@ -37,7 +39,11 @@ class _BrowseTabState extends State<BrowseTab> {
     final response = await http.get(Uri.parse(
         'https://yts.mx/api/v2/list_movies.json?limit=10&genre=$selectedCategory'));
     if (response.statusCode == 200) {
-      setState(() => movies = json.decode(response.body)['data']['movies']);
+      final data = json.decode(response.body);
+      final moviesList = data['data']['movies'] as List;
+      setState(() {
+        movies = moviesList.map((movie) => Movie.fromJson(movie)).toList();
+      });
     }
   }
 
@@ -86,39 +92,11 @@ class _BrowseTabState extends State<BrowseTab> {
                       mainAxisSpacing: 10,
                     ),
                     itemCount: movies.length,
-                    itemBuilder: (context, index) => GestureDetector(
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => VideoPlayerScreen(
-                            movies[index]['torrents'][0]['url'],
-                            movies[index]['title'],
-                          ),
-                        ),
-                      ),
-                      child: MovieCard(movies[index]),
-                    ),
+                    itemBuilder: (context, index) =>
+                        MovieCard(movie: movies[index]),
                   ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class MovieCard extends StatelessWidget {
-  final movie;
-  MovieCard(this.movie);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        image: DecorationImage(
-          image: NetworkImage(movie['medium_cover_image']),
-          fit: BoxFit.cover,
-        ),
       ),
     );
   }

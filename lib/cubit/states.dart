@@ -43,3 +43,24 @@ class BrowseError extends BrowseState {
 
   const BrowseError(this.message);
 }
+
+// Search States
+abstract class SearchState {
+  const SearchState();
+}
+
+class SearchInitial extends SearchState {}
+
+class SearchLoading extends SearchState {}
+
+class SearchLoaded extends SearchState {
+  final List<Movie> movies;
+
+  const SearchLoaded(this.movies);
+}
+
+class SearchError extends SearchState {
+  final String message;
+
+  const SearchError(this.message);
+}

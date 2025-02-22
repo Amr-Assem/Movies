@@ -226,7 +226,7 @@ class MovieDetailsView extends StatelessWidget {
                 ],
 
                 // Summary Section
-                if (movie.summary.isNotEmpty) ...[
+                if (movie.descriptionFull.isNotEmpty) ...[
                   SectionHeading(title: 'Summary'),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16),

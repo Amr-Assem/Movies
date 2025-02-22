@@ -69,15 +69,30 @@ class BrowseView extends StatelessWidget {
                       padding: EdgeInsets.only(right: 8),
                       child: FilterChip(
                         selected: isSelected,
-                        label: Text(category),
+                        label: Text(
+                          category,
+                          style: TextStyle(fontSize: 20),
+                        ),
                         onSelected: (_) {
                           context.read<BrowseCubit>().changeCategory(category);
                         },
-                        backgroundColor: AppAssets.gray,
+                        backgroundColor:
+                            isSelected ? AppAssets.primary : Colors.transparent,
                         selectedColor: AppAssets.primary,
-                        labelStyle: TextStyle(
-                          color: isSelected ? Colors.black : Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                          side: BorderSide(
+                            color: isSelected
+                                ? Colors.transparent
+                                : AppAssets.primary,
+                            width: 2,
+                          ),
                         ),
+                        labelStyle: TextStyle(
+                          color:
+                              isSelected ? AppAssets.black : AppAssets.primary,
+                        ),
+                        showCheckmark: false,
                       ),
                     );
                   },

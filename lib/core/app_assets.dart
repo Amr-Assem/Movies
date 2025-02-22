@@ -17,6 +17,10 @@ abstract class AppAssets {
   static const String search = 'assets/icons/search.svg';
   static const String browse = 'assets/icons/browse.svg';
   static const String profile = 'assets/icons/profile.svg';
+  static const String playButton = 'assets/icons/play.svg';
+  static const String star = 'assets/icons/star.svg';
+  static const String time = 'assets/icons/time.svg';
+  static const String heart = 'assets/icons/heart.svg';
 
   // Colors
   static const Color primary = Color(0xFFFFBB3B);

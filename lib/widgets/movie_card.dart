@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movies_app/core/app_assets.dart';
 import 'package:movies_app/models/movie.dart';
-import 'package:movies_app/screens/movie_details_screen.dart';
+import 'package:movies_app/movie_details_screen.dart';
 
 class MovieCard extends StatelessWidget {
   final Movie movie;

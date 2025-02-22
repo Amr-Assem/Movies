@@ -25,20 +25,15 @@ class MovieCard extends StatelessWidget {
       },
       child: Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                image: NetworkImage(movie.mediumCoverImage),
-                fit: BoxFit.cover,
-              ),
-            ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image.network(movie.largeCoverImage),
           ),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 10, vertical: 14),
-            padding: EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+            padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(8),
               color: Color.fromARGB(100, 0, 0, 0),
             ),
             child: Row(
@@ -48,11 +43,11 @@ class MovieCard extends StatelessWidget {
                   movie.rating.toString(),
                   style: TextStyle(color: Colors.white),
                 ),
-                SizedBox(width: 4),
+                SizedBox(width: 2),
                 Icon(
                   Icons.star_rounded,
                   color: AppAssets.primary,
-                  size: 16,
+                  size: 20,
                 ),
               ],
             ),

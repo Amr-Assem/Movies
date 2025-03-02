@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<<<<<<< HEAD
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -7,6 +8,10 @@
     </queries>
     <application
         android:label="movies_app"
+=======
+    <application
+        android:label="movie"
+>>>>>>> feature-branch
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -42,6 +47,10 @@
          https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
 
          In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+<<<<<<< HEAD
+=======
+         
+>>>>>>> feature-branch
     <queries>
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>

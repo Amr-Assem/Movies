@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 include: package:flutter_lints/flutter.yaml
-=======
+
 # This file configures the analyzer, which statically analyzes Dart code to
 # check for errors, warnings, and lints.
 #
@@ -29,4 +28,3 @@ linter:
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
->>>>>>> feature-branch

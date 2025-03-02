@@ -160,7 +160,8 @@ class MovieDetailsView extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      MovieInfo(icon: AppAssets.heart, text: "${movie.rating}"),
+                      MovieInfo(
+                          icon: AppAssets.heart, text: "${movie.likeCount}"),
                       MovieInfo(icon: AppAssets.time, text: "${movie.runtime}"),
                       MovieInfo(icon: AppAssets.star, text: "${movie.rating}"),
                     ],

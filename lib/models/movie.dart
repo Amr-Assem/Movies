@@ -33,6 +33,7 @@ class Movie {
   final String? largeScreenshot1;
   final String? largeScreenshot2;
   final String? largeScreenshot3;
+  final likeCount;
 
   Movie({
     required this.id,
@@ -69,6 +70,7 @@ class Movie {
     this.largeScreenshot1,
     this.largeScreenshot2,
     this.largeScreenshot3,
+    this.likeCount = 0,
   });
 
   factory Movie.fromJson(Map<String, dynamic> json) {
@@ -90,6 +92,7 @@ class Movie {
       ytTrailerCode: json['yt_trailer_code'] ?? '',
       language: json['language'] ?? '',
       mpaRating: json['mpa_rating'] ?? '',
+      likeCount: json['like_count'] ?? '',
       backgroundImage: json['background_image'] ?? '',
       backgroundImageOriginal: json['background_image_original'] ?? '',
       smallCoverImage: json['small_cover_image'] ?? '',
